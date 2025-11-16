@@ -5,7 +5,7 @@ pipeline {
 
         stage('Clone Repo') {
             steps {
-                git url: 'https://github.com/shiv4j/kube.git', branch: 'main'
+                git url: 'https://github.com/rnkumar0517-alt/week7.git', branch: 'main'
             }
         }
 
