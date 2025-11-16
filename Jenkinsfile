@@ -2,9 +2,7 @@ pipeline {
     agent any
     
     environment {
-        DOCKER_USERNAME = "nithish0517
-
-"
+        DOCKER_USERNAME = "nithish0517"
         DOCKER_PASSWORD = credentials('rachakonda05')
     }
 
