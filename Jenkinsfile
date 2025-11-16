@@ -2,7 +2,9 @@ pipeline {
     agent any
     
     environment {
-        DOCKER_USERNAME = "Nithish Kumar"
+        DOCKER_USERNAME = "nithish0517
+
+"
         DOCKER_PASSWORD = credentials('rachakonda05')
     }
 
@@ -21,14 +23,14 @@ pipeline {
 
         stage('Docker Login') {
             steps {
-                sh "echo ${rachakonda05} | docker login -u ${Nithish Kumar} --password-stdin"
+                sh "echo ${rachakonda05} | docker login -u ${nithish0517} --password-stdin"
             }
         }
 
         stage('Tag & Push Image') {
             steps {
-                sh 'docker tag week7-app:latest ${Nithish Kumar}/week7-app:latest'
-                sh 'docker push ${Nithish Kumar}/week7-app:latest'
+                sh 'docker tag week7-app:latest ${nithish0517}/week7-app:latest'
+                sh 'docker push ${nithish0517}/week7-app:latest'
             }
         }
     }
