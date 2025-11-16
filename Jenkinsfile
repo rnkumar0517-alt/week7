@@ -1,5 +1,10 @@
 pipeline {
     agent any
+    
+    environment {
+        DOCKER_USERNAME = "Nithish Kumar"
+        DOCKER_PASSWORD = credentials('Rachakonda@05')
+    }
 
     stages {
         stage('Clone Repo') {
@@ -10,7 +15,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t my-kube1:latest .'
+                sh 'docker build -t week7-app:latest .'
             }
         }
 
@@ -20,10 +25,10 @@ pipeline {
             }
         }
 
-        stage('Push Docker Image') {
+        stage('Tag & Push Image') {
             steps {
-                sh 'docker tag my-kube1:latest ${Nithish Kumar}/my-kube1:latest'
-                sh 'docker push ${Nithish Kumar}/my-kube1:latest'
+                sh 'docker tag week7-app:latest ${Nithish Kumar}/week7-app:latest'
+                sh 'docker push ${Nithish Kumar}/week7-app:latest'
             }
         }
     }
